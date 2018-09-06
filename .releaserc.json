@@ -1,3 +1,14 @@
 {
-  "tagFormat": "${version}"
+  "tagFormat": "${version}",
+  "verifyConditions": [
+    "@semantic-release/changelog",
+    "@semantic-release/git",
+    "@semantic-release/github",
+    "@semantic-release/npm"
+  ],
+  "prepare": [
+    "@semantic-release/changelog",
+    "@semantic-release/git",
+    "@semantic-release/npm"
+  ]
 }
