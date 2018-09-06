@@ -19,6 +19,7 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest --config .jest.json",
+    "start": "npm test -- --watch",
     "prepublishOnly": "npm run test && npm run build",
     "lint": "npm-run-all --parallel lint:js lint:commits",
     "lint:js": "eslint --ext .js src tests",

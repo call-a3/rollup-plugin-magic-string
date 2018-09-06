@@ -31,8 +31,8 @@ export default {
         },
       }),
       rollupPluginMagicString.default({
-        magic(code, id, magicString) {
-          const wrappedCode = JSON.stringify(`<!--${id}-->\n${code}`)
+        magic(code, _id, magicString) {
+          const wrappedCode = JSON.stringify(code)
           magicString
             .overwrite(0, code.length, wrappedCode)
             .prependLeft(0, 'export default ')

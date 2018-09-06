@@ -8,7 +8,7 @@ export default append;
 `;
 
 exports[`should execute custom magic-string operations correctly 1`] = `
-"var template = \\"<!--/home/adriaan/Projects/rollup-plugin-insert/test/template.html-->\\\\n<div class=\\\\\\"test\\\\\\">\\\\n  <%- msg %>\\\\n</div>\\\\n\\";
+"var template = \\"<div class=\\\\\\"test\\\\\\">\\\\n  <%- msg %>\\\\n</div>\\\\n\\";
 
 var transform = {
   template,
