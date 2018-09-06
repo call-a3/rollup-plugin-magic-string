@@ -5,6 +5,7 @@ const pkg = require('./package.json')
 export default {
   input: 'src/index.js',
   output: {
+    exports: 'named',
     banner: `/*!
  * ${pkg.name} - ${pkg.description}
  * Version ${pkg.version}
@@ -15,9 +16,14 @@ export default {
  *
  * Source code: ${pkg.repository}
  */`,
+    outro: 'module.exports = Object.assign(exports.default, exports)',
     file: 'build/index.js',
     format: 'cjs',
   },
-  plugins: [buble()],
+  plugins: [
+    buble({
+      objectAssign: 'Object.assign',
+    }),
+  ],
   external: Object.keys(pkg.dependencies),
 }
