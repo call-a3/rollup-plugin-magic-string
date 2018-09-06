@@ -32,16 +32,6 @@
     "commit": "commit",
     "semantic-release": "travis-deploy-once semantic-release"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
   "peerDependencies": {
     "rollup": "0.65.2"
   },
