@@ -30,8 +30,7 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "prepush": "npm test -- --coverage",
     "commit": "commit",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "semantic-release": "travis-deploy-once semantic-release"
   },
   "babel": {
     "presets": [
