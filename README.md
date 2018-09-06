@@ -4,7 +4,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/call-a3/rollup-plugin-magic-string.svg)](https://codecov.io/gh/call-a3/rollup-plugin-magic-string)
 [![David](https://img.shields.io/david/call-a3/rollup-plugin-magic-string.svg)](https://david-dm.org/call-a3/rollup-plugin-magic-string)
 [![David Dev](https://img.shields.io/david/dev/call-a3/rollup-plugin-magic-string.svg)](https://david-dm.org/call-a3/rollup-plugin-magic-string?type=dev)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Greenkeeper badge](https://badges.greenkeeper.io/call-a3/rollup-plugin-magic-string.svg)](https://greenkeeper.io/)
 
 string mutation plugin for rollup
 
