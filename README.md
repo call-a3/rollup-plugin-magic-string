@@ -1,6 +1,5 @@
 # rollup-plugin-magic-string
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/call-a3/rollup-plugin-magic-string.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/call-a3/rollup-plugin-magic-string.svg)](https://travis-ci.org/call-a3/rollup-plugin-magic-string)
 [![Codecov](https://img.shields.io/codecov/c/github/call-a3/rollup-plugin-magic-string.svg)](https://codecov.io/gh/call-a3/rollup-plugin-magic-string)
 [![David](https://img.shields.io/david/call-a3/rollup-plugin-magic-string.svg)](https://david-dm.org/call-a3/rollup-plugin-magic-string)
