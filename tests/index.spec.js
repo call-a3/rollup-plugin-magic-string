@@ -1,7 +1,7 @@
 import { rollup } from 'rollup'
 import hypothetical from 'rollup-plugin-hypothetical'
 
-import * as rollupPluginMagicString from '../src'
+import * as rollupPluginMagicString from '..'
 
 test('should throw if mandatory option "magic" is missing or is not a function', () => {
   expect(() =>
