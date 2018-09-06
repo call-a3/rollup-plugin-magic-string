@@ -11,7 +11,27 @@ node_js:
   - '6'
 after_success:
   - npm run report-coverage
-  - npm run semantic-release
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+
+jobs:
+  include:
+    - stage: greenkeeper
+      before_install: npm install -g greenkeeper-lockfile
+      install: npm install
+      before_script: greenkeeper-lockfile-update
+      after_script: greenkeeper-lockfile-upload
+
+    - stage: semantic release
+      node_js: '10'
+      script: npm run semantic-release
+
+stages:
+  - name: compile
+  - name: test
+    if: NOT branch =~ /^greenkeeper\/.*$/
+  - name: greenkeeper
+    if: branch =~ /^greenkeeper\/.*$/
+  - name: semantic release
+    if: branch = master
