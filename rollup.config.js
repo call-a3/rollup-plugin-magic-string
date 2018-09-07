@@ -17,7 +17,7 @@ export default {
  * Source code: ${pkg.repository}
  */`,
     outro: 'module.exports = Object.assign(exports.default, exports)',
-    file: 'build/index.js',
+    file: 'dist/index.js',
     format: 'cjs',
   },
   plugins: [

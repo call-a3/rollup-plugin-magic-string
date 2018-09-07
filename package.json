@@ -14,7 +14,7 @@
   "license": "MIT",
   "files": [
     "src/index.js",
-    "build/index.js"
+    "dist/index.js"
   ],
   "scripts": {
     "build": "rollup -c",
