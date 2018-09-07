@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should append code correctly 1`] = `
+"const append = {};
+
+export default append;
+"
+`;
+
+exports[`should execute custom magic-string operations correctly 1`] = `
+"var template = \\"<div class=\\\\\\"test\\\\\\">\\\\n  <%- msg %>\\\\n</div>\\\\n\\";
+
+var transform = {
+  template,
+};
+
+export default transform;
+"
+`;
+
+exports[`should prepend code correctly 1`] = `
+"const prepend = () => {};
+var prepend$1 = prepend();
+
+export default prepend$1;
+"
+`;
+
+exports[`should throw if mandatory option "magic" is missing or is not a function 1`] = `"options.magic is required"`;
+
+exports[`should throw if mandatory option "magic" is missing or is not a function 2`] = `"options.magic is required"`;
+
+exports[`should wrap code correctly 1`] = `
+"const wrap = () => {};
+const wrapped = wrap();
+
+export default wrapped;
+"
+`;
