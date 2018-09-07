@@ -9,7 +9,7 @@
 
 string mutation plugin for rollup
 
-## Usage
+## Installing
 
 ```bash
 # npm
@@ -19,54 +19,69 @@ npm install -D rollup-plugin-magic-string
 yarn add -D rollup-plugin-magic-string
 ```
 
+## Usage
+
+The default functionality gives you a magic-string object from the code of a module and allows you to perform any operations that [magic-string](https://github.com/Rich-Harris/magic-string) supports.
+
+Most often, you'll want to perform one of these very common operations. This module provides shortcut access to these, and thanks to magic-string, they are fully source-map supported.
+
+### **Append**: Append a string to the end of (a) module(s).
+
 ```js
-import * as magicString from 'rollup-plugin-magic-string'
+import { append } from 'rollup-plugin-magic-string'
+
+export default {
+  // ... rollup config here
+  plugins: [append('THE END' /*, [options] */)],
+}
 ```
 
-## Common Usage
-
-All methods has an optional last argument `options` which is an object and contains key `include` and `exclude`.
-
-It can be used to filter files as you like. For example you can wrapper your html template as following:
+### **Prepend**: Prepends a string to (a) module(s).
 
 ```js
-insert.transform(
-  (code, id) =>
-    `export default ${JSON.stringify(`<!--add some comments-->${code}`)}`,
-  {
-    include: '**/*.html',
-  },
-)
+import { prepend } from 'rollup-plugin-magic-string'
+
+export default {
+  // ... rollup config here
+  plugins: [prepend('Hi there\n\n' /*, [options] */)],
+}
 ```
 
-## Append
-
-Appends a string onto the contents.
+### **Wrap**: Wraps the contents between two strings.
 
 ```js
-insert.append('world') // Appends 'world' to the contents of every file
+import { wrap } from 'rollup-plugin-magic-string'
+
+export default {
+  // ... rollup config here
+  plugins: [wrap('THE GAME', 'Ha, made you lose!')],
+}
 ```
 
-## Prepend
+## Direct magic-string access
 
-Prepends a string onto the contents.
-
-```js
-insert.prepend('Hello') // Prepends 'Hello' to the contents of every file
-```
-
-## Wrap
-
-Wraps the contents with two strings.
+The above are useful shorthands, however as mentioned this plugin really gives you access to any operation that [magic-string](https://github.com/Rich-Harris/magic-string) supports:
 
 ```js
-insert.wrap('Hello', 'World') // prepends 'hello' and appends 'world' to the contents
-```
+import magicString from 'rollup-plugin-magic-string'
 
-## Transform
+rollup({
+  plugins: [
+    magicString(
+      /* options = */ {
+        // `magic` MUST be a function and is required
+        magic(code, id, string) {
+          // `code` is the source code of a module
+          // `id` is the id of that module
+          // `string` is an instance of MagicString that wraps `code`
 
-Calls a function with the contents of the file.
-
-```js
-insert.transform((code, id) => code.toUpperCase())
+          // you can now use `string` to do all kinds of string manipulations
+          string.overwrite(0, 5, 'ABC').indent('  ')
+        },
+        // The options `include`, `exclude` and `sourceMap` are also supported
+        // and behave as you would expect from a rollup plugin.
+      },
+    ),
+  ],
+})
 ```
