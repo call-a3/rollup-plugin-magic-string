@@ -2,7 +2,7 @@
   "name": "rollup-plugin-magic-string",
   "version": "0.0.0-development",
   "description": "magic-string plugin for rollup",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "src/index.js",
   "jsnext:main": "src/index.js",
   "repository": "https://github.com/call-a3/rollup-plugin-magic-string.git",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "files": [
     "src/index.js",
-    "build/index.js"
+    "dist/index.js"
   ],
   "scripts": {
     "build": "rollup -c",
