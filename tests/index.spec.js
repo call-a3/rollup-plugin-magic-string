@@ -42,7 +42,13 @@ export default {
     ],
   })
 
-  const { code, map } = await bundle.generate({ format: 'es', sourcemap: true })
+  const { output } = await bundle.generate({
+    format: 'esm',
+    sourcemap: true,
+  })
+  expect(output).toHaveLength(1)
+  const [chunk] = output
+  const { code, map } = chunk
 
   expect(code).toMatchSnapshot()
   expect(map).not.toBeFalsy()
@@ -62,7 +68,13 @@ test('should append code correctly', async () => {
     ],
   })
 
-  const { code, map } = await bundle.generate({ format: 'es', sourcemap: true })
+  const { output } = await bundle.generate({
+    format: 'esm',
+    sourcemap: true,
+  })
+  expect(output).toHaveLength(1)
+  const [chunk] = output
+  const { code, map } = chunk
 
   expect(code).toMatchSnapshot()
   expect(map).not.toBeFalsy()
@@ -82,7 +94,13 @@ test('should prepend code correctly', async () => {
     ],
   })
 
-  const { code, map } = await bundle.generate({ format: 'es', sourcemap: true })
+  const { output } = await bundle.generate({
+    format: 'esm',
+    sourcemap: true,
+  })
+  expect(output).toHaveLength(1)
+  const [chunk] = output
+  const { code, map } = chunk
 
   expect(code).toMatchSnapshot()
   expect(map).not.toBeFalsy()
@@ -105,11 +123,18 @@ test('should wrap code correctly', async () => {
     ],
   })
 
-  const { code, map } = await bundle.generate({ format: 'es', sourcemap: true })
+  const { output } = await bundle.generate({
+    format: 'esm',
+    sourcemap: true,
+  })
+  expect(output).toHaveLength(1)
+  const [chunk] = output
+  const { code, map } = chunk
 
   expect(code).toMatchSnapshot()
   expect(map).not.toBeFalsy()
 })
+
 test('should not output a sourcemap when disabled', async () => {
   const bundle = await rollup({
     input: './test/wrap.js',
@@ -126,7 +151,13 @@ test('should not output a sourcemap when disabled', async () => {
     ],
   })
 
-  const { map } = await bundle.generate({ format: 'es', sourcemap: false })
+  const { output } = await bundle.generate({
+    format: 'esm',
+    sourcemap: false,
+  })
+  expect(output).toHaveLength(1)
+  const [chunk] = output
+  const { map } = chunk
 
   expect(map).toBeFalsy()
 })
