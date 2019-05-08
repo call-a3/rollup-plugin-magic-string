@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/call-a3/rollup-plugin-magic-string/compare/1.0.1...1.0.2) (2019-05-08)
+
+
+### Bug Fixes
+
+* release patch version which works against new dependencies ([f5cc287](https://github.com/call-a3/rollup-plugin-magic-string/commit/f5cc287))
+
 ## [1.0.1](https://github.com/call-a3/rollup-plugin-magic-string/compare/1.0.0...1.0.1) (2018-09-07)
 
 
