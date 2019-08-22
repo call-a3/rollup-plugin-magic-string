@@ -2,7 +2,7 @@ import { createFilter } from 'rollup-pluginutils'
 import MagicString from 'magic-string'
 
 export default function rollupPluginMagicString({ magic, ...options }) {
-  if (!Function.prototype.isPrototypeOf(magic)) {
+  if (!Object.prototype.isPrototypeOf.bind(Function.prototype)(magic)) {
     throw new TypeError('options.magic is required')
   }
   const filter = createFilter(options.include, options.exclude)
