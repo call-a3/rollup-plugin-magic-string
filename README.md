@@ -1,7 +1,7 @@
 # rollup-plugin-magic-string
 
 [![NPM](https://img.shields.io/npm/v/rollup-plugin-magic-string.svg)](https://www.npmjs.com/package/rollup-plugin-magic-string)
-[![Travis](https://img.shields.io/travis/call-a3/rollup-plugin-magic-string.svg)](https://travis-ci.org/call-a3/rollup-plugin-magic-string)
+[![Travis](https://img.shields.io/travis/call-a3/rollup-plugin-magic-string.svg)](https://travis-ci.com/call-a3/rollup-plugin-magic-string)
 [![Codecov](https://img.shields.io/codecov/c/github/call-a3/rollup-plugin-magic-string.svg)](https://codecov.io/gh/call-a3/rollup-plugin-magic-string)
 [![Greenkeeper badge](https://badges.greenkeeper.io/call-a3/rollup-plugin-magic-string.svg)](https://greenkeeper.io/)
 [![David](https://img.shields.io/david/call-a3/rollup-plugin-magic-string.svg)](https://david-dm.org/call-a3/rollup-plugin-magic-string)
