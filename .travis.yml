@@ -1,37 +1,40 @@
 language: node_js
-cache:
-  directories:
-    - ~/.npm
-notifications:
-  email: false
+
 node_js:
-  - '10'
-  - '9'
-  - '8'
-  - '6'
-after_success:
-  - npm run report-coverage
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  - node
+  - lts/*
 
 jobs:
   include:
     - stage: greenkeeper
+      node_js: lts/*
       before_install: npm install -g greenkeeper-lockfile
-      install: npm install
       before_script: greenkeeper-lockfile-update
       after_script: greenkeeper-lockfile-upload
 
-    - stage: semantic release
-      node_js: '10'
-      script: npm run semantic-release
+    - stage: test
+      after_success:
+        - npm run report-coverage
+
+    - stage: verify codestyle
+      node_js: lts/*
+      before_script:
+        - commitlint-travis
+        - standard
+
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npm run semantic-release
 
 stages:
+  - name: verify codestyle
   - name: compile
   - name: test
     if: NOT branch =~ /^greenkeeper\/.*$/
   - name: greenkeeper
     if: branch =~ /^greenkeeper\/.*$/
-  - name: semantic release
+  - name: release
     if: branch = master
