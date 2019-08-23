@@ -10,6 +10,7 @@ jobs:
       node_js: lts/*
       before_install: npm install -g greenkeeper-lockfile
       before_script: greenkeeper-lockfile-update
+      script: skip
       after_script: greenkeeper-lockfile-upload
 
     - stage: test
@@ -18,12 +19,13 @@ jobs:
 
     - stage: verify codestyle
       node_js: lts/*
-      before_script:
+      script:
         - commitlint-travis
         - standard
 
     - stage: release
       node_js: lts/*
+      script: skip
       deploy:
         provider: script
         skip_cleanup: true
