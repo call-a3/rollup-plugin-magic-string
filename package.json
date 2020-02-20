@@ -9,6 +9,7 @@
     "check-coverage": "jest --coverage",
     "commit": "git-cz",
     "report-coverage": "codecov",
+    "presemantic-release": "npm run build",
     "semantic-release": "semantic-release",
     "tdd": "jest --watch",
     "test": "jest"
