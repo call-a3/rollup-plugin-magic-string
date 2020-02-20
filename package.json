@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-magic-string",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "magic-string plugin for rollup",
   "main": "dist/index.js",
   "module": "src/index.js",

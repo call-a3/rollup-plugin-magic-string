@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/call-a3/rollup-plugin-magic-string/compare/1.0.3...1.0.4) (2020-02-20)
+
+
+### Bug Fixes
+
+* make sure a build happens before a release ([92fed20](https://github.com/call-a3/rollup-plugin-magic-string/commit/92fed2093b1aa5e21964313b533a6863a431b6b3)), closes [#41](https://github.com/call-a3/rollup-plugin-magic-string/issues/41)
+
 ## [1.0.3](https://github.com/call-a3/rollup-plugin-magic-string/compare/1.0.2...1.0.3) (2019-08-23)
 
 
