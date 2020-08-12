@@ -39,4 +39,4 @@ stages:
   - name: greenkeeper
     if: branch =~ /^greenkeeper\/.*$/
   - name: release
-    if: branch = master
+    if: branch = main
