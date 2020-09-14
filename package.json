@@ -43,7 +43,7 @@
     "@babel/preset-env": "^7.11.0",
     "@call-a3/standard": "^1.0.3",
     "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "^9.1.1",
+    "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/prompt-cli": "^9.1.1",
     "@commitlint/travis-cli": "^9.1.1",
     "@semantic-release/changelog": "^5.0.1",
